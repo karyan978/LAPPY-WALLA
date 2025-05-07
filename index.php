@@ -65,6 +65,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -123,84 +124,61 @@
 
      <div class="container section mt-5">
       <div class="row">
-        <h2 class="mb-5"> Trending Product</h2>
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="assets/img/asus lapi.jpg" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Vivobook 16</p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
+        <h2 class="mb-5">Apple Trending Product</h2>
 
-        <div class="col-3">
+        <?php
+         include 'connection.php';
+         $select = "SELECT * FROM `record`";
+         $query = mysqli_query($con,$select);
+         while( $row = mysqli_fetch_array($query) ) {
+          echo '<div class= "col-lg-3">
           <div class="box shadow text-center">
-            <img src="assets/img/asus-laptop-l510-ultra-thin-laptop.jpg" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Laptop L210 11.6</p>
-            <p><s> ₹55000 </s> 45000 </p>
+          <img src="upload/'.$row['file'].'" alt="" class="img-fluid">
+          <p class="mt-2">'.$row['name'].'</p>
+          <p>price : <s> ₹'.$row['price'].' </s> '.$row['price1'].'</p>
+          <button type="button" class="btn btn-lg btn btn-primary mt-3">Know More</button>
           </div>
-        </div>
-
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="assets/img/lenevo.webp" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">Lenovo IdeaPad </p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
-
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="assets/img/HP-Laptop-15s-11th-Gen-Intel-Core-i5-1155G7-1-485x485-optimized.webp" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Vivobook 16</p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
+          </div>';
           
-        <div class="div mt-5">
-          <div class="row">
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="assets/img/msi.jpg" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Vivobook 16</p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
+         }
+        ?>
+        
 
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8mZ1nfLsvaQfCqLltkFNcrD--p1d0hJ6faA&s" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Vivobook 16</p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
-
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="assets/img/dell-inspiron-15-3000-15-6-inch-full-hd.jpg" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Vivobook 16</p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
-
-        <div class="col-3">
-          <div class="box shadow text-center">
-            <img src="assets/img/deals.jpg" alt="" class="img-fluid">
-            <button type="button" class="btn btn-lg btn btn-primary mt-3"> Add To Cart</button>
-            <p class="mt-2">ASUS Vivobook 16</p>
-            <p><s> ₹55000 </s> 45000 </p>
-          </div>
-        </div>
+        
       </div>
-    </div>
       </div>
-     </div>
+
+      <div class="container section mt-5">
+      <div class="row">
+        <h2 class="mb-5">HP Trending Product</h2>
+
+        <?php
+         include 'connection.php';
+         $select = "SELECT * FROM `record_1`";
+         $query = mysqli_query($con,$select);
+         while( $row = mysqli_fetch_array($query) ) {
+          echo '<div class= "col-lg-3">
+          <div class="box shadow text-center">
+          <img src="upload/'.$row['file'].'" alt="" class="img-fluid">
+          <p class="mt-2">'.$row['name'].'</p>
+          <p>price : <s> ₹'.$row['price'].' </s> '.$row['price_1'].'</p>
+          <button type="button" class="btn btn-lg btn btn-primary mt-3">Know More</button>
+          </div>
+          </div>';
+          
+         }
+        ?>
+        
+
+        
+      </div>
+      </div>  
+
+
+
+     
+
+
      
 
      <!-- .part-4 -->

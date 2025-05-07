@@ -13,12 +13,13 @@
         <input type="file" name="file1">
         <input type="file" name="file2">
         <input type="file" name="file3">
-        <input type="text" name="name">
-        <input type="text" name="storage">
-        <input type="text" name="processor">
-        <input type="text" name="ram">
-        <input type="text" name="price">
-        <button name="submit">submit</button>
+        <input type="text" name="name" placeholder="Enter name">
+        <input type="text" name="storage" placeholder="Enter storage">
+        <input type="text" name="processor" placeholder="Enter processor">
+        <input type="text" name="ram" placeholder="Enter ram">
+        <input type="text" name="price" placeholder="Enter price">
+        <input type="text" name="price1" placeholder="Enter price1">
+        <button type="submit" name="submit">Submit</button>
     </form>
 </body>
 
@@ -54,8 +55,9 @@ if (isset($_POST['submit'])) {
     $processor = $_POST['processor'];
     $ram = $_POST['ram'];
     $price = $_POST['price'];
+    $price_1 = $_POST['price1'];
 
-    $insert = "INSERT INTO `record`(`file`, `file1`, `file2`, `file3`, `name`, `storage`, `processor`, `ram`, `price`) VALUES ('$filename','$filename1','$filename2','$filename3','$name','$storage','$processor','$ram','$price')";
+    $insert = "INSERT INTO `record_1`(`file`, `file1`, `file2`, `file3`, `name`, `storage`, `processor`, `ram`, `price`,`price_1`) VALUES ('$filename','$filename1','$filename2','$filename3','$name','$storage','$processor','$ram','$price','$price_1')";
 
     $query = mysqli_query($con, $insert);
 

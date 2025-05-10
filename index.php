@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
+<div class="fixed-bottom whatsapp d-lg-flex" style="margin-bottom:80px; margin-left:20px;">
+        <a href="https://wa.me/+917488339322"><button class="btn  rounded-circle" style="font-size: 24px; background-color: #0bf460;" ><i class="fa-brands fa-whatsapp text-white"></i></button></div></a>
+    
+        <div class=" fixed-bottom d-flex mb-4" style="margin-left:20px;">
+            <a href="tel:+919798228930"><button class="btn  rounded-circle" style="font-size: 22px; background-color: red;" ><i class="fa-solid fa-phone text-white"></i></button></div></a>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
         <div class="container-fluid top-fixed">
@@ -130,16 +134,19 @@
          include 'connection.php';
          $select = "SELECT * FROM `record`";
          $query = mysqli_query($con,$select);
-         while( $row = mysqli_fetch_array($query) ) {
-          echo '<div class= "col-lg-3">
+         while( $row = mysqli_fetch_assoc($query)) {
+          ?>
+          <div class= "col-lg-3 mt-5">
           <div class="box shadow text-center">
-          <img src="upload/'.$row['file'].'" alt="" class="img-fluid">
-          <p class="mt-2">'.$row['name'].'</p>
-          <p>price : <s> ₹'.$row['price'].' </s> '.$row['price1'].'</p>
+          <img src="upload/<?php echo $row['file'];?>" alt="" class="img-fluid">
+          <p class="mt-2"><?php echo $row['name'];?></p>
+          <p>price : <s> ₹<?php echo $row['price'];?></s> <?php echo $row['price1'];?></p>
+          <a href="datashow.php?id=<?php echo $row['id'];?>">
           <button type="button" class="btn btn-lg btn btn-primary mt-3">Know More</button>
+          </a>
           </div>
-          </div>';
-          
+          </div>
+          <?php
          }
         ?>
         
@@ -148,38 +155,76 @@
       </div>
       </div>
 
+
+
       <div class="container section mt-5">
       <div class="row">
-        <h2 class="mb-5">HP Trending Product</h2>
+        <h2 class="mb-5">Apple Trending Product</h2>
 
         <?php
          include 'connection.php';
          $select = "SELECT * FROM `record_1`";
          $query = mysqli_query($con,$select);
-         while( $row = mysqli_fetch_array($query) ) {
-          echo '<div class= "col-lg-3">
+         while( $row = mysqli_fetch_assoc($query)) {
+          ?>
+          <div class= "col-lg-3  mt-5">
           <div class="box shadow text-center">
-          <img src="upload/'.$row['file'].'" alt="" class="img-fluid">
-          <p class="mt-2">'.$row['name'].'</p>
-          <p>price : <s> ₹'.$row['price'].' </s> '.$row['price_1'].'</p>
+          <img src="upload/<?php echo $row['file'];?>" alt="" class="img-fluid">
+          <p class="mt-2"><?php echo $row['name'];?></p>
+          <p>price : <s> ₹<?php echo $row['price'];?></s> <?php echo $row['price_1'];?></p>
+
+          <a href="show1.php?id=<?php echo $row['id'];?>">
           <button type="button" class="btn btn-lg btn btn-primary mt-3">Know More</button>
+          </a>
           </div>
-          </div>';
-          
+          </div>
+          <?php
          }
         ?>
         
 
         
       </div>
-      </div>  
+      </div>
 
 
 
-     
+      <div class="container section mt-5">
+      <div class="row">
+        <h2 class="mb-5">Dell Trending Product</h2>
+
+        <?php
+         include 'connection.php';
+         $select = "SELECT * FROM `record_3`";
+         $query = mysqli_query($con,$select);
+         while( $row = mysqli_fetch_assoc($query)) {
+          ?>
+          <div class= "col-lg-3  mt-5">
+          <div class="box shadow text-center">
+          <img src="upload/<?php echo $row['file'];?>" alt="" class="img-fluid">
+          <p class="mt-2"><?php echo $row['name'];?></p>
+          <p>price : <s> ₹<?php echo $row['price'];?></s> <?php echo $row['price_1'];?></p>
+
+          <a href="show2.php?id=<?php echo $row['id'];?>"> 
+          <button type="button" class="btn btn-lg btn btn-primary mt-3">Know More</button>
+          </a>
+          </div>
+          </div>
+          <?php
+         }
+        ?>
+        
+
+        
+      </div>
+      </div>
 
 
-     
+      
+
+
+
+
 
      <!-- .part-4 -->
       <div class="container section-2 mt-5">
@@ -258,7 +303,7 @@
       </div>
        
       <!-- .part-5 -->
-       
+       <form action="" method="post">
       <div class="container-fluid map-section mt-5">
         <div class="container">
           <h4 class="text-center">Contact Us</h4>
@@ -268,13 +313,13 @@
       <h4 class="mt-3">For Any Query Contact Us</h4>
 
       <form action="" class="m-5">
-        <input type="text" placeholder=" Name*"   class="form-control mb-3">
-        <input type="email" placeholder=" Email*"   class="form-control mb-3">
-        <input type="Phone" placeholder=" Phone"   class="form-control mb-3">
-        <input type="Subject" placeholder=" Subject"   class="form-control mb-3">
-        <textarea name="textarea" id=""placeholder="Message*"   class="form-control mb-3"></textarea><br>
+        <input type="text" placeholder=" Name*"   class="form-control mb-3" name="name">
+        <input type="email" placeholder=" Email*"   class="form-control mb-3" name="email">
+        <input type="Phone" placeholder=" Phone"   class="form-control mb-3" name="phone">
+        <input type="Subject" placeholder=" Subject"   class="form-control mb-3" name="subject">
+        <textarea name="textarea" id=""placeholder="Message*"   class="form-control mb-3" name="message"></textarea><br>
 
-        <a href=""><button>Submit</button></a>
+        <button name="submit">Submit</button>
 
       </form>
   </div>
@@ -288,6 +333,7 @@
 </div>
 
 </div>
+</form>
 
 
       <!-- last part -->
@@ -343,4 +389,65 @@
      
 </body>
 </html>
+
+
+<?php
+
+ 
+ //Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+    if(isset($_POST['submit'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $subject = $_POST['subject'];
+        $message = $_POST['query'];
+
+
+
+
+ 
+
+//Load Composer's autoloader
+require 'PHPMailer\Exception.php';
+require 'PHPMailer\PHPMailer.php';
+require 'PHPMailer\SMTP.php';
+
+//Create an instance; passing true enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+    //Server settings
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+    $mail->Username   = 'abhinavalok9019@gmail.com';                     //SMTP username
+    $mail->Password   = 'tkit jnur cvbh xbjo';                               //SMTP password
+    $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
+    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
+
+    //Recipients
+    $mail->setFrom($email, '');
+    $mail->addAddress('abhinavalok9019@gmail.com', '');     //Add a recipient
+    
+
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'related to puchasing laptop';
+    $mail->Body    = "customer Name: $name <br> customer Email: $email <br> customer phone : $phone <br> customer subject : $subject <br> Customer Message: $message";
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
+
+}
+
+    ?>
 

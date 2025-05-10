@@ -72,6 +72,7 @@ span{
     </style>
 </head>
 <body>
+
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
         <div class="container-fluid top-fixed">
@@ -114,14 +115,12 @@ span{
           </div>
         </div>
       </nav>
-
-    
 <div class="container mt-5">
     <div class="row">
         <?php
         include "connection.php";
         $ids = $_GET['id'];
-        $select = "SELECT * FROM `record` WHERE `id`='$ids'";
+        $select = "SELECT * FROM `record_3` WHERE `id`='$ids'";
         $query = mysqli_query($con,$select);
         $row = mysqli_num_rows($query);
         while($mn=mysqli_fetch_assoc($query)){
@@ -157,7 +156,7 @@ span{
             <strong>Ram : <?php echo $mn['ram'];?></strong>
             <br>
             <br>
-            <strong>Price :<s><?php echo $mn['price'];?></s> <?php echo $mn['price1'];?></strong>
+            <strong>Price :<s><?php echo $mn['price'];?></s> <?php echo $mn['price_1'];?></strong>
             <br>
             <br>
             <button class="btn btn-lg btn btn-primary">Add to Cart</button>
@@ -214,6 +213,5 @@ span{
       </div>
 
      </div>
-</div>
 </body>
 </html>

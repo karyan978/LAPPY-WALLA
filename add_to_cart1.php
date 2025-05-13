@@ -5,7 +5,7 @@ include "connection.php";
 if (isset($_POST['id']) && !empty($_POST['id'])) {
     $id = intval($_POST['id']);
     
-    $q = "SELECT * FROM `record` WHERE id = $id";
+    $q = "SELECT * FROM `record_1` WHERE id = $id";
     $res = mysqli_query($con,$q);
 
     if ($res && $res->num_rows > 0) {

@@ -69,93 +69,9 @@ span{
     line-height: 30px;
     color: lightcyan;
 }
-
-
-.from-section{
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 50px 30px;
-  background: linear-gradient(to top, #333 80%, #333 50%, #eee 75%, #333 75%);
-}
-
-/* <!-- FROM SECTION START --> */
-
-
-    .login-section{
-        position: relative;
-        transfrom: translate(-50%, -50%);
-        top: 20%;
-        left: 40%;
-        background-color: white !important;
-        /* box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3), -10px -10px 10px rgba(0, 0, 0, 0.3); */
-        width: 30%;
-        margin: auto;
-        padding: 10px;
-        /* height: 400px; */
-        margin-bottom: 30px;
-        border-top: 30px solid rgb(226, 178, 20);
-        border-bottom: 30px solid rgb(200, 128, 12);
-        border-radius: 5px;
-        z-index: 1;
-    }
-    .from-section{
-      background-color: white !important;
-    }
-
-    .tittle{
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-        
-        
-    }
-    .tittle button{
-        display: flex;
-        justify-content: space-between;
-        font-size: 20px;
-        color: rgb(251, 246, 246);
-        margin: 15px 30px;
-        background-color: #ff0404;
-        padding: 2px 13px;
-        border-radius: 5px;
-        border: #c6c311 2px solid;
-        cursor: pointer;
-
-    }
-    
-    .from-section input{
-        max-width: 200px;
-        height: 30px;
-        margin-top: 20px;
-        text-indent: 10px;
-    }
-    .from-section textarea{
-        margin: 30px 10px;
-        max-width: 400px;
-        text-indent: 10px;
-        height: 100px;
-    }
-    .from-section button{
-        width: 100px;
-        height: 40px;
-        background-color: #ff0404;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-     .from-section button:hover{
-        scale: 0.8;
-        transition: 1s ease-in-out;
-     }
-    
-      /* CLOSE FROM SECTION */
-
     </style>
 </head>
 <body>
-
-
 
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
@@ -199,71 +115,29 @@ span{
           </div>
         </div>
       </nav>
-
-      <!-- FROM SECTION START -->
-  
-    <!-- <button type="open" id="open">Open</button> -->
-    
-    <div class="login-section position-absolute" id="from">
-       
-
-<div class="tittle">
-  <h4>-----Customar Suppot Helpline----</h4>
-  <button id="close"><i class="fa-solid fa-xmark"></i></button>
-
-</div>
-
-<div class="from-section">
-    <hr style=" color: rgb(226, 20, 30);">
-
-   <form action="" method="post">
-    <input type="text" name="name" placeholder="Name*" required>
-     <input type="email" name="email" placeholder="Email*" required>
-     <input type="number" name="phone" placeholder="Phone*" required>
-     <input type="text" name="Address" placeholder="Address*" required>
-     <textarea name="message" id="" cols="30" rows="10" placeholder="Message*" required></textarea><br>
-     <button type="submit" id="submit">Submit</button>
-     
-
-   </form>
-
-</div>
-</div>
-   
-<!-- CLOSE FROM SECTION -->
-
-
-    
 <div class="container mt-5">
     <div class="row">
         <?php
         include "connection.php";
         $ids = $_GET['id'];
-        $select = "SELECT * FROM `record` WHERE `id`='$ids'";
+        $select = "SELECT * FROM `record_3` WHERE `id`='$ids'";
         $query = mysqli_query($con,$select);
         $row = mysqli_num_rows($query);
         while($mn=mysqli_fetch_assoc($query)){
         ?>
         <div class="col-6">
             <div class="card" style="background-color:gray; padding:30px;">
-              <img id="pic1" style="height:400px;" src="upload/<?php echo $mn['file1'];?>" alt="" class="img-fluid rounded">
-              <img id="pic2" style="height:400px;" src="upload/<?php echo $mn['file2'];?>" alt="" class="img-fluid rounded">
-              <img id="pic3" style="height:400px;" src="upload/<?php echo $mn['file3'];?>" alt="" class="img-fluid rounded">
+              <img style="height:400px;" src="upload/<?php echo $mn['file1'];?>" alt="" class="img-fluid rounded">
             </div>
             <div class="row mt-3">
-                <div class="col-4">
+                <div class="col-6">
                     <div class="card p-3">
-                        <img id="pic4" src="upload/<?php echo $mn['file1'];?>" alt="" class="img-fluid">
+                        <img src="upload/<?php echo $mn['file2'];?>" alt="" class="img-fluid">
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-6">
                     <div class="card p-3">
-                        <img id="pic5" src="upload/<?php echo $mn['file2'];?>" alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card p-3">
-                        <img id="pic6" src="upload/<?php echo $mn['file3'];?>" alt="" class="img-fluid">
+                        <img src="upload/<?php echo $mn['file3'];?>" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -282,14 +156,15 @@ span{
             <strong>Ram : <?php echo $mn['ram'];?></strong>
             <br>
             <br>
-            <strong>Price :<s><?php echo $mn['price'];?></s> <?php echo $mn['price1'];?></strong>
+            <strong>Price :<s><?php echo $mn['price'];?></s> <?php echo $mn['price_1'];?></strong>
             <br>
             <br>
-            <form action="add_to_cart.php" method="post">
-              <input type="hidden" name="id" value="<?php echo $mn['id'];?>">
-              <button class="btn btn-lg btn btn-primary">Add to Cart</button>
+            <form action="add_to_cart2.php" method="post">
+                 <button class="btn btn-lg btn btn-primary">Add to Cart</button>
+                 <input type="hidden" name="id" value="<?php echo $mn['id'];?>">
             </form>
-            <button class="btn btn-lg btn btn-warning mx-3" id="open">Buy Now</button>
+            
+            <button class="btn btn-lg btn btn-warning mx-3">Buy Now</button>
 
         </div>
         <?php
@@ -342,60 +217,5 @@ span{
       </div>
 
      </div>
-</div>
-
-
-
-</div>
-
-<script>
- let pic1 = document.getElementById("pic1");
- let pic2 = document.getElementById("pic2");
- let pic3 = document.getElementById("pic3");
- let pic4 = document.getElementById("pic4");
- let pic5 = document.getElementById("pic5");
- let pic6 = document.getElementById("pic6");
-
- pic2.style.display = "none";
- pic3.style.display = "none";
-
- pic4.addEventListener("click",function(){
-    pic2.style.display = "none";
-    pic3.style.display = "none";
-    pic1.style.display = "block";
- });
- pic5.addEventListener("click",function(){
-    pic2.style.display = "block";
-    pic3.style.display = "none";
-    pic1.style.display = "none";
- });
- pic6.addEventListener("click",function(){
-    pic2.style.display = "none";
-    pic3.style.display = "block";
-    pic1.style.display = "none";
- });
-
-  let open = document.getElementById("open");
-     let close = document.getElementById("close");
-     let  from = document.getElementById("from");
-
-     from.style.display = "none";
-
-     open.addEventListener("click", function(){
-        from.style.display = "block";
-     });
-
-     close.addEventListener("click",function(){
-        from.style.display = "none"; 
-     })
-
-
-
- 
-
-
-
-
-</script>
 </body>
 </html>

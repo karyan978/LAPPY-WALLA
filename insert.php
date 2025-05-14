@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
     $price = $_POST['price'];
     $price_1 = $_POST['price1'];
 
-    $insert = "INSERT INTO `record_1`(`file`, `file1`, `file2`, `file3`, `name`, `storage`, `processor`, `ram`, `price`,`price_1`) VALUES ('$filename','$filename1','$filename2','$filename3','$name','$storage','$processor','$ram','$price','$price_1')";
+    $insert = "INSERT INTO `record_3`(`file`, `file1`, `file2`, `file3`, `name`, `storage`, `processor`, `ram`, `price`,`price_1`) VALUES ('$filename','$filename1','$filename2','$filename3','$name','$storage','$processor','$ram','$price','$price_1')";
 
     $query = mysqli_query($con, $insert);
 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .tittle{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        
+        
+    }
+    .tittle button{
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        color: rgb(251, 246, 246);
+        margin: 15px 30px;
+        background-color: #ff0404;
+        padding: 2px 13px;
+        border-radius: 5px;
+        border: #c6c311 2px solid;
+        cursor: pointer;
+
+    }
+    .login-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3), -10px -10px 10px rgba(0, 0, 0, 0.3);
+        max-width: 30%;
+        margin: auto;
+        padding: 10px;
+        height: 400px;
+        margin-bottom: 30px;
+        border-top: 30px solid rgb(226, 178, 20);
+        border-bottom: 30px solid rgb(200, 128, 12);
+        border-radius: 5px;
+        z-index: 999;
+    }
+    
+    .from-section input{
+        max-width: 200px;
+        height: 30px;
+        margin-top: 20px;
+        text-indent: 10px;
+    }
+    .from-section textarea{
+        margin: 30px 10px;
+        max-width: 400px;
+        text-indent: 10px;
+        height: 100px;
+    }
+    .from-section button{
+        width: 100px;
+        height: 40px;
+        background-color: #ff0404;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+     .from-section button:hover{
+        scale: 0.8;
+        transition: 1s ease-in-out;
+     }
+    
+</style>
+<body>
+
+     <button type="open" id="open">Open</button>
+    
+    <div class="login-section" id="from">
+       
+
+<div class="tittle">
+  <h4>-----Customar Suppot Helpline----</h4>
+  <button id="close"><i class="fa-solid fa-xmark"></i></button>
+
+</div>
+
+<div class="from-section">
+    <hr style=" color: rgb(226, 20, 30);">
+
+   <form action="" method="post">
+    <input type="text" name="name" placeholder="Name*" required>
+     <input type="email" name="email" placeholder="Email*" required>
+     <input type="number" name="phone" placeholder="Phone*" required>
+     <input type="text" name="Address" placeholder="Address*" required>
+     <textarea name="message" id="" cols="30" rows="10" placeholder="Message*" required></textarea><br>
+     <button type="submit" id="submit">Submit</button>
+     
+
+   </form>
+
+</div>
+</div>
+   
+
+
+<script>
+     let open = document.getElementById("open");
+     let close = document.getElementById("close");
+     let  from = document.getElementById("from");
+
+     from.style.display = "none";
+
+     open.addEventListener("click", function(){
+        from.style.display = "block";
+     });
+
+     close.addEventListener("click",function(){
+        from.style.display = "none"; 
+     })
+
+
+
+
+
+
+</script>
+</body>
+</html>

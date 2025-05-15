@@ -303,7 +303,7 @@
       </div>
        
       <!-- .part-5 -->
-       
+       <form action="" method="post">
       <div class="container-fluid map-section mt-5">
         <div class="container">
           <h4 class="text-center">Contact Us</h4>
@@ -312,12 +312,21 @@
   <div class="col-lg-6 Contact_us">
       <h4 class="mt-3">For Any Query Contact Us</h4>
 
+<<<<<<< HEAD
       <form action="" method="post" class="m-5">
         <input type="text" placeholder=" Name*" name="name"  class="form-control mb-3">
         <input type="email" placeholder=" Email*" name="email"   class="form-control mb-3">
         <input type="Phone" placeholder=" Phone" name="phone"   class="form-control mb-3">
         <input type="Subject" placeholder=" Subject" name="subject"   class="form-control mb-3">
         <textarea name="message" id=""placeholder="Message*"   class="form-control mb-3"></textarea><br>
+=======
+      <form action="" class="m-5">
+        <input type="text" placeholder=" Name*"   class="form-control mb-3" name="name">
+        <input type="email" placeholder=" Email*"   class="form-control mb-3" name="email">
+        <input type="Phone" placeholder=" Phone"   class="form-control mb-3" name="phone">
+        <input type="Subject" placeholder=" Subject"   class="form-control mb-3" name="subject">
+        <textarea name="textarea" id=""placeholder="Message*"   class="form-control mb-3" name="message"></textarea><br>
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
 
         <button name="submit">Submit</button>
 
@@ -333,6 +342,7 @@
 </div>
 
 </div>
+</form>
 
 
       <!-- last part -->
@@ -390,7 +400,10 @@
 </html>
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
 <?php
 
  
@@ -405,7 +418,11 @@ use PHPMailer\PHPMailer\Exception;
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $subject = $_POST['subject'];
+<<<<<<< HEAD
         $message = $_POST['message'];
+=======
+        $message = $_POST['query'];
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
 
 
 
@@ -425,14 +442,23 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+<<<<<<< HEAD
     $mail->Username   = 'ligeraryan5@gmail.com';                     //SMTP username
     $mail->Password   = 'uvet hfyf wvrp yszy';                               //SMTP password
+=======
+    $mail->Username   = 'abhinavalok9019@gmail.com';                     //SMTP username
+    $mail->Password   = 'tkit jnur cvbh xbjo';                               //SMTP password
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
     $mail->SMTPSecure = 'TLS';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
 
     //Recipients
     $mail->setFrom($email, '');
+<<<<<<< HEAD
     $mail->addAddress('ligeraryan5@gmail.com', '');     //Add a recipient
+=======
+    $mail->addAddress('abhinavalok9019@gmail.com', '');     //Add a recipient
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
     
 
 

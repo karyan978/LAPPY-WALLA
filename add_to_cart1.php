@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 
     <?php
+=======
+<?php
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
 session_start();
 include "connection.php";
 
 if (isset($_POST['id']) && !empty($_POST['id'])) {
     $id = intval($_POST['id']);
     
+<<<<<<< HEAD
     $q = "SELECT * FROM record_1 WHERE id = $id";
+=======
+    $q = "SELECT * FROM `record_1` WHERE id = $id";
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
     $res = mysqli_query($con,$q);
 
     if ($res && $res->num_rows > 0) {
@@ -47,4 +55,8 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
 } else {
     echo "Invalid item ID.";
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 016e5b0e08e9afeda19a96ce54a6bccd61657a92
